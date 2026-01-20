@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: p2pool-litecoincash
+name: P2Pool LCC
+version: "1.0.0"
+tagline: Decentralized P2P mining for Litecoin Cash
+description: >
+  A decentralized mining pool for Litecoin Cash (LCC). 
+  Run your own p2pool node on your Umbrel to mine 
+  peer-to-peer without central pool fees or downtime.
+  Includes a built-in Gemini AI mining assistant to help monitor pool health.
+developer: mtmining
+website: "https://github.com/mtmining/p2pool-litecoincash"
+repo: "https://github.com/mtmining/p2pool-litecoincash"
+support: "https://github.com/mtmining/p2pool-litecoincash/issues"
+port: 9332
+gallery:
+  - "https://raw.githubusercontent.com/mtmining/p2pool-litecoincash/master/screenshots/dashboard.png"
+path: "/"
+defaultConfig:
+  LCC_NODE_IP: "127.0.0.1"
+  LCC_NODE_PORT: "28888"
+  FEE: "0.0"
+dependencies:
+  - litecoincash-node

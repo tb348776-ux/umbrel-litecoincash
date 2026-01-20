@@ -1,0 +1,14 @@
+{
+  "manifestVersion": 1,
+  "id": "p2pool-litecoincash",
+  "name": "P2Pool Litecoin Cash",
+  "version": "1.0.0",
+  "tagline": "Decentralized P2P mining for Litecoin Cash",
+  "description": "P2Pool is a decentralized mining pool that works by creating a peer-to-peer network of miner nodes.",
+  "developer": "mtmining",
+  "website": "https://github.com/mtmining/p2pool-litecoincash",
+  "repo": "https://github.com/mtmining/p2pool-litecoincash",
+  "support": "https://github.com/mtmining/p2pool-litecoincash/issues",
+  "port": 9332,
+  "path": "/"
+}

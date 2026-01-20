@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    image: getumbrel/app-proxy:v0.1.0
+    export: true
+    restart: on-failure
+    environment:
+      APP_HOST: p2pool-lcc_web_1
+      APP_PORT: 3000
+
+  p2pool-lcc:
+    image: mtmining/p2pool-litecoincash:latest
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/p2pool-data
+    environment:
+      - LCC_RPC_HOST=litecoincash_node_1
+      - LCC_RPC_PORT=28888
+      - LCC_RPC_USER=${APP_LCC_RPC_USER}
+      - LCC_RPC_PASS=${APP_LCC_RPC_PASS}
+    ports:
+      - 9332:9332 # P2P Port
+      - 19332:19332 # Worker Stratum Port
+    networks:
+      - default
+
+  web:
+    build: ..
+    restart: on-failure
+    environment:
+      - API_KEY=${GEMINI_API_KEY}
+    networks:
+      - default
+
+networks:
+  default:
+    name: p2pool-lcc_network
